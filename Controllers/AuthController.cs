@@ -5,6 +5,8 @@ using auth6.Models;
 using Microsoft.EntityFrameworkCore;
 using auth6.DTO;
 
+namespace auth6.Controllers;
+
 
 [ApiController]
 [Route("auth")]
@@ -28,6 +30,8 @@ public class AuthController : ControllerBase
             Name = dto.Name,
             HashedPassword = BCrypt.Net.BCrypt.HashPassword(dto.Password)
         };
+        _context.User.Add(user);
+        await _context.SaveChangesAsync();
         return Ok("user registered");
     }
 
