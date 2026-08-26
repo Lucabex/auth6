@@ -11,8 +11,8 @@ options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
-    app.MapSwagger();
-    app.MapSwagger();
+    app.UseSwagger();
+    app.UseSwagger();
 }
 
 app.MapControllers();
