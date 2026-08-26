@@ -1,0 +1,6 @@
+@auth6_HostAddress = http://localhost:5207
+
+GET {{auth6_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
