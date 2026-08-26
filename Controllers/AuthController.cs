@@ -31,7 +31,7 @@ public class AuthController : ControllerBase
         return Ok("user registered");
     }
 
-    [HttpGet("reg")]
+    [HttpGet("log")]
     public async Task<IActionResult> Log(LogDto dto)
     {
         var user = await _context.User.FirstOrDefaultAsync(u=> u.Name.ToLower() == dto.Name.ToLower());
